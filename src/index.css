@@ -1,7 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500&display=swap');
+
+@import '@splidejs/react-splide/css';
+
+@import '@splidejs/react-splide/css/skyblue';
+@import '@splidejs/react-splide/css/sea-green';
+
+
+@import '@splidejs/react-splide/css/core';
+
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --red: '#FC4747';
+  --dark: '#10141E';
+  --purple: '#5A698F';
+  --lightDark: '#161D2F';
+  --white: '#ffffff';
+}
+
+body {
+  font-family: 'Outfit';
 }
