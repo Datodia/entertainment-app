@@ -18,6 +18,13 @@ export interface DataType {
     isTrending: boolean;
 }
 
+
+export type Props = {
+    data: DataType[];
+    search: string;
+    setSearch: React.Dispatch<React.SetStateAction<string>>
+}
+
 export interface Show {
     show: string;
     setShow: React.Dispatch<React.SetStateAction<Show>>;

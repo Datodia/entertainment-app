@@ -7,13 +7,15 @@ import { Movies } from './pages/Movies/Movies';
 import { Bookmark } from './pages/Bookmark/Bookmark';
 import { Root } from './pages/Root/Root';
 import Data from './data.json'
-import { DataType } from './Interface';
+import { DataType, Props } from './Interface';
 
-export const DataContext = createContext<DataType[]>(Data)
+export const DataContext = createContext<Props>("")
 
 function App() {
 
   const [data, setData] = useState<DataType[]>(Data)
+  const [search, setSearch] = useState<string>("")
+
 
 
   const router = createBrowserRouter(
@@ -27,7 +29,7 @@ function App() {
     ))
 
   return (
-    <DataContext.Provider value={data}>
+    <DataContext.Provider value={{ data, search, setSearch }}>
       <RouterProvider router={router} />
     </DataContext.Provider>
   )
