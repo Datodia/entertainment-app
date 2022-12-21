@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { createContext, useState } from 'react'
 import './App.css'
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 import { Homepage } from './pages/Homepage/Homepage';
@@ -6,9 +6,15 @@ import { TVseries } from './pages/TVseries/TVseries';
 import { Movies } from './pages/Movies/Movies';
 import { Bookmark } from './pages/Bookmark/Bookmark';
 import { Root } from './pages/Root/Root';
+import Data from './data.json'
+import { DataType } from './Interface';
+
+export const DataContext = createContext<DataType[]>(Data)
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [data, setData] = useState<DataType[]>(Data)
+
 
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -21,9 +27,9 @@ function App() {
     ))
 
   return (
-    <div className="App">
+    <DataContext.Provider value={data}>
       <RouterProvider router={router} />
-    </div>
+    </DataContext.Provider>
   )
 }
 
