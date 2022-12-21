@@ -7,8 +7,15 @@ import { links } from '../../links'
 
 export const Root = () => {
 
-    const data = useContext(DataContext)
+    const Data = useContext(DataContext)
     const [active, setActive] = useState<string>('/')
+
+    // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     Data?.setSearch(e.target.value)
+    // }
+    // console.log(Data?.data)
+
+    // console.log(Data?.data.map((item) => item.title).filter((item) => item === Data.search))
 
     return (
         <Container>
@@ -35,6 +42,7 @@ export const Root = () => {
                 <Logo src="assets/icon-search.svg" />
                 <Input
                     placeholder='Search for movies or TV series'
+                    onChange={(e) => Data?.setSearch(e.target.value)}
                 />
             </SearchDiv>
             <Outlet />
