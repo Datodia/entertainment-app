@@ -5,9 +5,10 @@ import styled from 'styled-components'
 
 type Props2 = {
     filteredData: DataType[];
+    name: string
 }
 
-export const MoviesComp = ({ filteredData }: Props2) => {
+export const MoviesComp = ({ filteredData, name }: Props2) => {
 
     const { setData, data, search, setSearch } = useContext<Props>(DataContext)
 
@@ -27,7 +28,7 @@ export const MoviesComp = ({ filteredData }: Props2) => {
 
     return (
         <MoviesDiv>
-            <RecomendedTitle>Recomended for you</RecomendedTitle>
+            <RecomendedTitle>{name}</RecomendedTitle>
             {filteredData.filter(item => item.title.toLocaleLowerCase().startsWith(search)).map((item) => {
                 return (
                     <MovieItem>
@@ -61,7 +62,6 @@ const TrendingTitle = styled.h1`
     font-weight: 300;
     color: white;
     padding: 26px 0 16px 0;
-    padding-left: 5%;
 `
 
 const Bookmark = styled.div`
@@ -79,8 +79,8 @@ const MoviesDiv = styled.div`
     width: 90vw;
     justify-content: space-between;
     display: flex;
-    flex-wrap: wrap;
-    
+    flex-wrap: wrap; 
+    margin: auto;
 `
 const MovieItem = styled.div`
     position: relative;
@@ -131,4 +131,5 @@ const ItemTitle = styled.h2`
 `
 
 const RecomendedTitle = styled(TrendingTitle)`
+    width: 100vw;
 `
