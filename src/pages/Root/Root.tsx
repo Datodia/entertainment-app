@@ -10,12 +10,6 @@ export const Root = () => {
     const Data = useContext(DataContext)
     const [active, setActive] = useState<string>('/')
 
-    // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    //     Data?.setSearch(e.target.value)
-    // }
-    // console.log(Data?.data)
-
-    // console.log(Data?.data.map((item) => item.title).filter((item) => item === Data.search))
 
     return (
         <Container>
@@ -52,6 +46,8 @@ export const Root = () => {
 
 const Container = styled.div`
     width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
     background-color: #10141E;
 `
 

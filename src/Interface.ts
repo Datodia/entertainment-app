@@ -22,7 +22,7 @@ export interface DataType {
 export type Props = {
     data: DataType[];
     search: string;
-    setSearch?: React.Dispatch<React.SetStateAction<string>>
+    setSearch?: React.Dispatch<React.SetStateAction<string>> | undefined
     setData: React.Dispatch<React.SetStateAction<DataType[]>>
 }
 

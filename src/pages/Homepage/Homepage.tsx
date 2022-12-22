@@ -13,7 +13,7 @@ export const Homepage = () => {
     return (
         <Container>
             <Trending />
-            <MoviesComp filteredData={data} />
+            <MoviesComp filteredData={data} name={'Recomended for you'} />
         </Container>
     )
 }

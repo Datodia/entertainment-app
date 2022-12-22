@@ -75,7 +75,6 @@ const TrendingTitle = styled.h1`
     font-weight: 300;
     color: white;
     padding: 26px 0 16px 0;
-    padding-left: 5%;
 `
 
 const Bookmark = styled.div`
