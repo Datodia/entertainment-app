@@ -8,8 +8,15 @@ import { Bookmark } from './pages/Bookmark/Bookmark';
 import { Root } from './pages/Root/Root';
 import Data from './data.json'
 import { DataType, Props } from './Interface';
+import DataContextProvider from './Context';
 
-export const DataContext = createContext<Props>("")
+
+export const DataContext = createContext<Props>({
+  data: [],
+  search: '',
+  setData: () => { },
+  setSearch: () => { }
+})
 
 function App() {
 
@@ -29,9 +36,9 @@ function App() {
     ))
 
   return (
-    <DataContext.Provider value={{ data, search, setSearch }}>
+    <DataContext.Provider value={{ data, search, setSearch, setData }}>
       <RouterProvider router={router} />
-    </DataContext.Provider>
+    </DataContext.Provider >
   )
 }
 
