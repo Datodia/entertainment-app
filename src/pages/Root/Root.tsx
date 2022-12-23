@@ -36,7 +36,7 @@ export const Root = () => {
                 <Logo src="assets/icon-search.svg" />
                 <Input
                     placeholder='Search for movies or TV series'
-                    onChange={(e) => Data?.setSearch(e.target.value)}
+                    onChange={(e) => Data?.setSearch((e.target.value).toLocaleLowerCase())}
                 />
             </SearchDiv>
             <Outlet />
@@ -67,13 +67,16 @@ const NavBar = styled.div`
         padding: 0 19px 0 24px;
         margin-top: 23px;
     }
-    @media screen and (min-width: 1350px){
+    @media screen and (min-width: 1000px){
        flex-direction: column;
-       width: 92px;
+       width: 70px;
        padding: 24px 0 24px 0;
        height: 600px;
        position: fixed;
        left: 15px;
+    }
+    @media screen and (min-width: 1350px){
+       width: 92px;
     }
 `
 const Img = styled.img`
@@ -95,9 +98,10 @@ const Links = styled.ul`
     @media screen and (min-width: 768px){
         gap: 32px;
     }
-    @media screen and (min-width: 1350px){
+    @media screen and (min-width: 1000px){
         flex-direction: column;
     }
+    
 `
 const LinkItem = styled(Link)`
     @media screen and (min-width: 1350px){
@@ -119,6 +123,9 @@ const SearchDiv = styled.div`
         justify-content: flex-start;
         gap: 28px;
         margin-top: 37px;
+    }
+    @media screen and (min-width: 1000px){
+        width: 800px;
     }
     @media screen and (min-width: 1350px){
         width: 1100px;
