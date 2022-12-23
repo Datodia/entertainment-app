@@ -18,7 +18,7 @@
 ### Links
 
 - Solution URL: [https://github.com/Datodia/entertainment-app](https://github.com/Datodia/entertainment-app)
-- Live Site URL: [[Add live site URL here](https://entertainment-datodia.vercel.app/)]([https://your-live-site-url.com](https://entertainment-datodia.vercel.app/))
+- Live Site URL: [[https://entertainment-datodia.vercel.app/](https://entertainment-datodia.vercel.app/)]
 
 ## My process
 
