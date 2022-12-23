@@ -44,6 +44,10 @@ export const Trending = () => {
                             <Bookmark onClick={() => handleClick(item.title)} >
                                 {item.isBookmarked ? <BookmarkImg src="assets/icon-bookmark-full.svg" /> : <BookmarkImg src="assets/icon-bookmark-empty.svg" />}
                             </Bookmark>
+                            <PlayDiv>
+                                <PlayImg src="assets/icon-play.svg" />
+                                <PlayTitle>Play</PlayTitle>
+                            </PlayDiv>
                             <Div>
                                 <ItemDesc>
                                     <ItemYear>{item.year}</ItemYear>
@@ -69,14 +73,29 @@ export const Trending = () => {
 const TrendingContainer = styled.div`
     
 `
-const TrendingDiv = styled.div`
-    width: 240px;
-    @media screen and (min-width: 768px){
-        width: 380px;
-        height: 200px;
-    }
+
+const PlayDiv = styled.div`
+    width: 120px;
+    height: 48px;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    cursor: pointer;
+    display: none;
 `
 
+const PlayImg = styled.img`
+`
+const PlayTitle = styled.h2`
+    font-size: 18px;
+    font-weight: 500;
+    color:  white;
+`
 const Img = styled.img`
     width: 240px;
     border-radius: 8px;
@@ -85,6 +104,29 @@ const Img = styled.img`
         height: 100%
     }
 `
+
+const TrendingDiv = styled.div`
+    width: 240px;
+    @media screen and (min-width: 768px){
+        width: 380px;
+        height: 200px;
+    }
+    @media screen and (min-width: 1350px){
+        width: 400px;
+        height: 240px;
+        :hover{
+        ${PlayDiv}{
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        ${Img}{
+            filter: brightness(50%)
+        }
+    }
+    }
+`
+
+
 const BookmarkImg = styled.img`
     
 `
@@ -99,6 +141,9 @@ const TrendingTitle = styled.h1`
         margin: auto;
         font-size: 32px;
     }
+    @media screen and (min-width: 1350px){
+        width: 1100px;
+    }
 `
 
 const Bookmark = styled.div`
@@ -110,8 +155,17 @@ const Bookmark = styled.div`
     justify-content: center;
     transform: translate(197px, -145px);
     background-color: #5A698F;
+    &:hover{
+        background-color: white;
+        ${BookmarkImg}{
+            filter: brightness(10%)
+        }
+    }
     @media screen and (min-width: 768px){
         transform:translate(330px, -185px);
+    }
+    @media screen and (min-width: 1350px){
+        transform:translate(350px, -215px);
     }
     
 `
@@ -124,6 +178,9 @@ const Div = styled.div`
     @media screen and (min-width: 768px){
         top: 140px;
         left: 30px;
+    }
+    @media screen and (min-width: 1350px){
+        top: 170px;
     }
 `
 

@@ -67,6 +67,14 @@ const NavBar = styled.div`
         padding: 0 19px 0 24px;
         margin-top: 23px;
     }
+    @media screen and (min-width: 1350px){
+       flex-direction: column;
+       width: 92px;
+       padding: 24px 0 24px 0;
+       height: 600px;
+       position: fixed;
+       left: 15px;
+    }
 `
 const Img = styled.img`
     width: 16px;
@@ -87,9 +95,16 @@ const Links = styled.ul`
     @media screen and (min-width: 768px){
         gap: 32px;
     }
+    @media screen and (min-width: 1350px){
+        flex-direction: column;
+    }
 `
 const LinkItem = styled(Link)`
-    
+    @media screen and (min-width: 1350px){
+        &:hover{
+            transform: scale(1.2)
+        }
+    }
 `
 
 const SearchDiv = styled.div`
@@ -105,6 +120,9 @@ const SearchDiv = styled.div`
         gap: 28px;
         margin-top: 37px;
     }
+    @media screen and (min-width: 1350px){
+        width: 1100px;
+    }
 `
 
 const Input = styled.input`
@@ -114,4 +132,7 @@ const Input = styled.input`
     border: none;
     color: white;
     outline: none;
+    @media screen and (min-width: 1350px){
+        font-size: 24px;
+    }
 `
