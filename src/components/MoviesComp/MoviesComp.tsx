@@ -62,6 +62,10 @@ const TrendingTitle = styled.h1`
     font-weight: 300;
     color: white;
     padding: 26px 0 16px 0;
+    @media screen and (min-width: 768px){
+        font-size: 32px;
+        margin-top: 40px;
+    }
 `
 
 const Bookmark = styled.div`
@@ -81,6 +85,10 @@ const MoviesDiv = styled.div`
     display: flex;
     flex-wrap: wrap; 
     margin: auto;
+    @media screen and (min-width: 768px){
+        width: 720px;
+        margin: auto;
+    }
 `
 const MovieItem = styled.div`
     position: relative;
@@ -90,24 +98,34 @@ const MovieItem = styled.div`
 const MovieImg = styled.img`
     width: 150px;
     border-radius: 8px;
+    @media screen and (min-width: 768px){
+       width: 220px;
+       height: 140px;
+    }
 `
 const Bookmark2 = styled(Bookmark)`
     position: absolute;
     transform: translate(0);
     top: 5px;
     left: 110px;
+    @media screen and (min-width: 768px){
+       left: 170px;
+       top: 15px;
+    }
 `
 
 const ItemDesc = styled.div`
     display: flex;
     align-items: center;
-    //justify-content: space-between;
     gap: 6px;
 `
 const ItemYear = styled.h2`
     font-size: 11px;
     font-weight: 300;
     color: white;
+    @media screen and (min-width: 768px){
+       font-size: 13px;
+    }
 `
 const ItemCategory = styled(ItemYear)`
 `
@@ -128,6 +146,10 @@ const ItemTitle = styled.h2`
     font-size: 14px;
     font-weight: 500;
     color: white;
+    @media screen and (min-width: 768px){
+        margin-top: 6px;
+        font-size: 18px;
+    }
 `
 
 const RecomendedTitle = styled(TrendingTitle)`

@@ -52,23 +52,41 @@ const Container = styled.div`
 `
 
 const NavBar = styled.div`
-    /* width: 335px; */
     display: flex;
     align-items: center;
     justify-content: space-around;
     height: 56px;
     background-color: #161D2F;
+
+    @media screen and (min-width: 768px){
+        width: 720px;
+        height: 72px;
+        margin:auto;
+        border-radius: 10px;
+        justify-content: space-between;
+        padding: 0 19px 0 24px;
+        margin-top: 23px;
+    }
 `
 const Img = styled.img`
     width: 16px;
+    @media screen and (min-width: 768px){
+        width: 20px;
+    }
 `
 const Logo = styled.img`
     width: 24px;
+    @media screen and (min-width: 768px){
+        width: 32px;
+    }
 `
 
 const Links = styled.ul`
     display: flex;
     gap: 24px;
+    @media screen and (min-width: 768px){
+        gap: 32px;
+    }
 `
 const LinkItem = styled(Link)`
     
@@ -80,6 +98,13 @@ const SearchDiv = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    @media screen and (min-width: 768px){
+        width: 720px;
+        margin: auto;
+        justify-content: flex-start;
+        gap: 28px;
+        margin-top: 37px;
+    }
 `
 
 const Input = styled.input`

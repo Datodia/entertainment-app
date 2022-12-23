@@ -36,3 +36,16 @@
 body {
   font-family: 'Outfit';
 }
+
+
+
+@media screen and (min-width: 768px) {
+  .splide__track {
+    width: 720px;
+    margin: auto;
+  }
+
+  .splide__list {
+    gap: 140px;
+  }
+}
