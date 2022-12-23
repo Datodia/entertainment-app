@@ -83,10 +83,19 @@ const PlayDiv = styled.div`
     justify-content: center;
     gap: 15px;
     position: absolute;
-    top: 40%;
-    left: 50%;
+    top: 25%;
+    left: 20%;
     cursor: pointer;
     display: none;
+
+    @media screen and (min-width: 768px){
+      top: 35%;
+      left: 50%;
+    }
+    @media screen and (min-width: 1350px){
+        top: 40%;
+        left: 50%;
+    }
 `
 
 const PlayImg = styled.img`
@@ -107,14 +116,7 @@ const Img = styled.img`
 
 const TrendingDiv = styled.div`
     width: 240px;
-    @media screen and (min-width: 768px){
-        width: 380px;
-        height: 200px;
-    }
-    @media screen and (min-width: 1350px){
-        width: 400px;
-        height: 240px;
-        :hover{
+    :hover{
         ${PlayDiv}{
             display: flex;
             background-color: rgba(255, 255, 255, 0.3);
@@ -123,6 +125,13 @@ const TrendingDiv = styled.div`
             filter: brightness(50%)
         }
     }
+    @media screen and (min-width: 768px){
+        width: 380px;
+        height: 200px;
+    }
+    @media screen and (min-width: 1350px){
+        width: 400px;
+        height: 240px;
     }
 `
 
@@ -140,6 +149,9 @@ const TrendingTitle = styled.h1`
         width: 720px;
         margin: auto;
         font-size: 32px;
+    }
+    @media screen and (min-width: 1000px){
+        width: 800px;
     }
     @media screen and (min-width: 1350px){
         width: 1100px;

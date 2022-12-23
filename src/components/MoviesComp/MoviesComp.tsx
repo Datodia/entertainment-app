@@ -93,23 +93,37 @@ const MoviesDiv = styled.div`
         width: 720px;
         margin: auto;
     }
+    @media screen and (min-width: 1000px){
+        width: 800px;
+    }
     @media screen and (min-width: 1350px){
         width: 1100px;
     }
 `
 const PlayDiv = styled.div`
     width: 100px;
-    height: 48px;
+    height: 40px;
     border-radius: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     position: absolute;
-    top: 30%;
-    left: 30%;
+    top: 25%;
+    left: 18%;
     cursor: pointer;
     display: none;
+
+    @media screen and (min-width: 768px){
+      top: 30%;
+      left: 30%;
+    }
+    @media screen and (min-width: 1350px){
+        height: 48px;
+        top: 30%;
+        left: 30%;
+    }
+
 `
 
 const PlayImg = styled.img`
@@ -126,6 +140,10 @@ const MovieImg = styled.img`
     @media screen and (min-width: 768px){
        width: 220px;
        height: 140px;
+    }
+    @media screen and (min-width: 1000px){
+        width: 250px;
+        height: 170px;
     }
     @media screen and (min-width: 1350px){
         width: 270px;
@@ -163,6 +181,9 @@ const Bookmark2 = styled(Bookmark)`
     @media screen and (min-width: 768px){
        left: 170px;
        top: 15px;
+    }
+    @media screen and (min-width: 1000px){
+        left: 200px;
     }
     @media screen and (min-width: 1350px){
         left: 220px;
