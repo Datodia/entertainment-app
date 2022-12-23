@@ -36,6 +36,10 @@ export const MoviesComp = ({ filteredData, name }: Props2) => {
                         <Bookmark2 onClick={() => handleClick(item.title)} >
                             {item.isBookmarked ? <BookmarkImg src="assets/icon-bookmark-full.svg" /> : <BookmarkImg src="assets/icon-bookmark-empty.svg" />}
                         </Bookmark2>
+                        <PlayDiv>
+                            <PlayImg src="assets/icon-play.svg" />
+                            <PlayTitle>Play</PlayTitle>
+                        </PlayDiv>
                         <ItemDesc>
                             <ItemYear>{item.year}</ItemYear>
                             <ItemDot></ItemDot>
@@ -89,10 +93,31 @@ const MoviesDiv = styled.div`
         width: 720px;
         margin: auto;
     }
+    @media screen and (min-width: 1350px){
+        width: 1100px;
+    }
 `
-const MovieItem = styled.div`
-    position: relative;
-    margin-bottom: 15px;
+const PlayDiv = styled.div`
+    width: 100px;
+    height: 48px;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    cursor: pointer;
+    display: none;
+`
+
+const PlayImg = styled.img`
+`
+const PlayTitle = styled.h2`
+    font-size: 18px;
+    font-weight: 500;
+    color:  white;
 `
 
 const MovieImg = styled.img`
@@ -102,15 +127,45 @@ const MovieImg = styled.img`
        width: 220px;
        height: 140px;
     }
+    @media screen and (min-width: 1350px){
+        width: 270px;
+        height: 170px;
+    }
 `
+const MovieItem = styled.div`
+    position: relative;
+    margin-bottom: 15px;
+
+    :hover{
+        ${PlayDiv}{
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        ${MovieImg}{
+            filter: brightness(50%)
+        }
+    }
+`
+
+
 const Bookmark2 = styled(Bookmark)`
     position: absolute;
     transform: translate(0);
     top: 5px;
     left: 110px;
+    &:hover{
+        background-color: white;
+        ${BookmarkImg}{
+            filter: brightness(10%)
+        }
+    }
+   
     @media screen and (min-width: 768px){
        left: 170px;
        top: 15px;
+    }
+    @media screen and (min-width: 1350px){
+        left: 220px;
     }
 `
 
